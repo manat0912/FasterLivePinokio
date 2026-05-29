@@ -1,0 +1,14 @@
+__pycache__
+.idea
+*.pyc
+.DS_Store
+checkpoints
+results
+venv
+*.egg-info
+build
+dist
+*.eg
+checkpoints_test
+logs
+third_party

@@ -1,0 +1,19 @@
+{
+  "title": "FasterLive-Pinokio",
+  "description": "",
+  "icon": "icon.png",
+  "links": [
+    {
+      "title": "github",
+      "value": "https://github.com/warmshao"
+    },
+    {
+      "title": "website",
+      "value": "https://github.com/warmshao/FasterLivePortrait.git"
+    }
+  ],
+  "posts": [],
+  "plugin": {
+    "menu": []
+  }
+}
