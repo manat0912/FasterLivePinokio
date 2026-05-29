@@ -86,6 +86,11 @@ module.exports = {
         return [{
           default: true,
           icon: "fa-solid fa-video",
+          text: "Start Web UI",
+          href: "start.js",
+        }, {
+          default: true,
+          icon: "fa-solid fa-video",
           text: "Start Camera Live Stream",
           href: "start_cam.js",
         }, {
