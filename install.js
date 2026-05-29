@@ -1,27 +1,12 @@
 module.exports = {
   run: [
-    // Clone the base repository
+    // Clone the customized application repository into the "app" folder
     {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/warmshao/FasterLivePortrait.git app",
+          "git clone https://github.com/manat0912/fasterlive-app-folder.git app",
         ]
-      }
-    },
-    // Apply custom webcam streaming and face stabilization patches
-    {
-      method: "fs.copy",
-      params: {
-        src: "camera_webui.py",
-        dest: "app/camera_webui.py"
-      }
-    },
-    {
-      method: "fs.copy",
-      params: {
-        src: "faster_live_portrait_pipeline.py",
-        dest: "app/src/pipelines/faster_live_portrait_pipeline.py"
       }
     },
     // Edit this step with your custom install commands
