@@ -6,7 +6,7 @@ module.exports = {
     let running = {
       install: info.running("install.js"),
       start: info.running("start.js"),
-      start_cam: info.running("start_cam.js"),
+      build_trt: info.running("compile_trt.js"),
       update: info.running("update.js"),
       reset: info.running("reset.js"),
       link: info.running("link.js")
@@ -40,27 +40,13 @@ module.exports = {
             href: "start.js",
           }]
         }
-      } else if (running.start_cam) {
-        let local = info.local("start_cam.js")
-        if (local && local.url) {
-          return [{
-            default: true,
-            icon: "fa-solid fa-rocket",
-            text: "Open Camera UI",
-            href: local.url,
-          }, {
-            icon: 'fa-solid fa-terminal',
-            text: "Terminal",
-            href: "start_cam.js",
-          }]
-        } else {
-          return [{
-            default: true,
-            icon: 'fa-solid fa-terminal',
-            text: "Terminal",
-            href: "start_cam.js",
-          }]
-        }
+      } else if (running.build_trt) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-terminal',
+          text: "Building TensorRT Engines",
+          href: "compile_trt.js",
+        }]
       } else if (running.update) {
         return [{
           default: true,
@@ -86,8 +72,8 @@ module.exports = {
         return [{
           default: true,
           icon: "fa-solid fa-video",
-          text: "Start Camera Live Stream",
-          href: "start_cam.js",
+          text: "Start",
+          href: "start.js",
         }, {
           icon: "fa-solid fa-bolt",
           text: "Compile TensorRT Engines (30+ FPS)",

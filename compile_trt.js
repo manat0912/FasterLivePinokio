@@ -3,9 +3,7 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        message: [
-          "build_trt.bat"
-        ]
+        message: "cmd /d /c build_trt.bat"
       }
     }
   ]
