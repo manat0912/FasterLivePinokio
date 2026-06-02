@@ -11,11 +11,11 @@ module.exports = {
         env: { },
         path: "app",
         message: [
-          "env\\Scripts\\python.exe webui.py",
+          "env\\Scripts\\python.exe camera_webui.py --port 9871"
         ],
         on: [{
-          "event": "/(http:\\/\\/[0-9.:]+)/",
-          "done": true
+          event: "/(http:\\/\\/[0-9.:]+)/",
+          done: true
         }]
       }
     },
