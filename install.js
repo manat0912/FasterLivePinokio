@@ -60,16 +60,23 @@ module.exports = {
     },
     // Step 6: Download pytorch models
     {
-        "method": "fs.download",
-        "params": {
-          "uri": [
-            "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/appearance_feature_extractor.pth?download=true",
-            "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/motion_extractor.pth?download=true",
-            "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/spade_generator.pth?download=true",
-            "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/warping_module.pth?download=true",
-          ],
-          "dir": "app/checkpoints/liveportrait_pytorch",
-        }
-      },
+      method: "fs.download",
+      params: {
+        uri: [
+          "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/appearance_feature_extractor.pth?download=true",
+          "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/motion_extractor.pth?download=true",
+          "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/spade_generator.pth?download=true",
+          "https://huggingface.co/KlingTeam/LivePortrait/resolve/main/liveportrait/base_models/warping_module.pth?download=true",
+        ],
+        dir: "app/checkpoints/liveportrait_pytorch",
+      }
+    },
+    // Step 7: Compile TensorRT engines
+    {
+      method: "shell.run",
+      params: {
+        message: "cmd /d /c build_trt.bat"
+      }
+    }
   ]
 }

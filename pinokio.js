@@ -7,6 +7,7 @@ module.exports = {
       install: info.running("install.js"),
       start: info.running("start.js"),
       build_trt: info.running("compile_trt.js"),
+      streaming: info.running("streaming.js"),
       update: info.running("update.js"),
       reset: info.running("reset.js"),
       link: info.running("link.js")
@@ -44,8 +45,15 @@ module.exports = {
         return [{
           default: true,
           icon: 'fa-solid fa-terminal',
-          text: "Building TensorRT Engines",
+          text: "Rebuilding TensorRT Engines",
           href: "compile_trt.js",
+        }]
+      } else if (running.streaming) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-terminal',
+          text: "Install Streaming Service",
+          href: "streaming.js",
         }]
       } else if (running.update) {
         return [{
@@ -76,8 +84,9 @@ module.exports = {
           href: "start.js",
         }, {
           icon: "fa-solid fa-bolt",
-          text: "Compile TensorRT Engines (30+ FPS)",
-          href: "compile_trt.js",
+          text: "Streaming",
+          href: "streaming.js",
+          confirm: "This will install a virtual camera driver globally on your system. Only supported on Windows."
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
@@ -86,6 +95,10 @@ module.exports = {
           icon: "fa-solid fa-plug",
           text: "Install",
           href: "install.js",
+        }, {
+          icon: "fa-solid fa-bolt",
+          text: "Recompile TensorRT",
+          href: "compile_trt.js",
         }, {
           icon: "fa-solid fa-file-zipper",
           text: "<div><strong>Save Disk Space</strong><div>Deduplicates redundant library files</div></div>",
