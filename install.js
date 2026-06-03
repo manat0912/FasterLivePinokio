@@ -44,7 +44,10 @@ module.exports = {
         build: true,
         venv: "env",
         path: "app",
-        message: "uv pip install src/models/XPose/models/UniPose/ops --no-build-isolation",
+        message: [
+          "uv pip install wheel",
+          "uv pip install src/models/XPose/models/UniPose/ops --no-build-isolation"
+        ]
       }
     },
     // Step 5: Download model checkpoints automatically
